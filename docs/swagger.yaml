@@ -1,0 +1,122 @@
+basePath: /api
+definitions:
+  dto.SendDto:
+    properties:
+      amount:
+        type: number
+      from:
+        type: string
+      to:
+        type: string
+    type: object
+  dto.TransactionGetDto:
+    properties:
+      amount:
+        type: number
+      id:
+        type: string
+      receiverId:
+        type: string
+      senderId:
+        type: string
+      time:
+        type: string
+    type: object
+  dto.WalletBalanceDto:
+    properties:
+      balance:
+        type: number
+    type: object
+  errs.CustomError:
+    properties:
+      status:
+        type: integer
+      text:
+        type: string
+    type: object
+externalDocs:
+  description: OpenAPI
+  url: https://swagger.io/resources/open-api/
+host: localhost:8001
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Test API
+  version: "1"
+paths:
+  /send:
+    post:
+      description: Transfer money from one wallet to the other
+      parameters:
+      - description: Form data
+        in: body
+        name: payload
+        schema:
+          $ref: '#/definitions/dto.SendDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errs.CustomError'
+      summary: Send
+      tags:
+      - Transaction
+  /transactions:
+    get:
+      description: Get last N transactions
+      parameters:
+      - description: Transaction count
+        in: query
+        name: count
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/dto.TransactionGetDto'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errs.CustomError'
+      summary: Get Last
+      tags:
+      - Transaction
+  /wallet/{address}/balance:
+    get:
+      description: Get wallet balance by id
+      parameters:
+      - description: Wallet id
+        in: path
+        name: address
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.WalletBalanceDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/errs.CustomError'
+      summary: Get Balance
+      tags:
+      - Wallet
+swagger: "2.0"
