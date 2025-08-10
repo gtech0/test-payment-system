@@ -5,6 +5,7 @@ import (
 	"test-payment-system/model"
 )
 
+// WalletMapper is used to convert model.Wallet to respective dto's.
 type WalletMapper struct{}
 
 func NewWalletMapper() *WalletMapper {

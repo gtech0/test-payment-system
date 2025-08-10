@@ -1,10 +1,11 @@
 package service
 
 import (
-	"github.com/google/uuid"
 	"test-payment-system/dto"
 	"test-payment-system/mapper"
 	"test-payment-system/repository"
+
+	"github.com/google/uuid"
 )
 
 type WalletService struct {

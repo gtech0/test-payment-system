@@ -2,16 +2,18 @@ package database
 
 import (
 	"fmt"
+	"log"
+	"os"
+
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"gorm.io/gorm/schema"
-	"log"
-	"os"
 )
 
 var DB *gorm.DB
 
+// Connect connects to a database, using specified in .env credentials
 func Connect() {
 	var err error
 	dsn := ConvertToDSN()
@@ -27,6 +29,7 @@ func Connect() {
 	}
 }
 
+// ConvertToDSN converts database credentials to string
 func ConvertToDSN() string {
 	hostname := os.Getenv("DB_HOST")
 	port := os.Getenv("DB_PORT")

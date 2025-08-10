@@ -1,9 +1,10 @@
 package dto
 
 import (
+	"time"
+
 	"github.com/google/uuid"
 	"github.com/shopspring/decimal"
-	"time"
 )
 
 type TransactionGetDto struct {

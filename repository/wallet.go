@@ -1,12 +1,14 @@
 package repository
 
 import (
-	"github.com/google/uuid"
 	"test-payment-system/database"
 	"test-payment-system/errs"
 	"test-payment-system/model"
+
+	"github.com/google/uuid"
 )
 
+// WalletRepository handles database operations related to model.Wallet
 type WalletRepository struct{}
 
 func NewWalletRepository() *WalletRepository {

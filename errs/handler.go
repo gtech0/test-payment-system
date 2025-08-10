@@ -2,10 +2,12 @@ package errs
 
 import (
 	"errors"
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
+// ErrorHandler is a basic gin middleware for handling errors
 func ErrorHandler(c *gin.Context) {
 	c.Next()
 

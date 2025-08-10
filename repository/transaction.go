@@ -6,6 +6,7 @@ import (
 	"test-payment-system/model"
 )
 
+// TransactionRepository handles database operations related to model.Transaction
 type TransactionRepository struct{}
 
 func NewTransactionRepository() *TransactionRepository {

@@ -5,6 +5,9 @@ import (
 	"github.com/shopspring/decimal"
 )
 
+// Transaction is a model, which is used to record transaction data.
+// SenderId and ReceiverId are ids of wallets.
+// Amount is a value transferred from sender to receiver.
 type Transaction struct {
 	Base
 	Amount     decimal.Decimal

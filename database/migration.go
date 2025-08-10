@@ -2,11 +2,12 @@ package database
 
 import (
 	"errors"
-	"github.com/shopspring/decimal"
-	"gorm.io/gorm"
 	"log"
 	"math/rand"
 	"test-payment-system/model"
+
+	"github.com/shopspring/decimal"
+	"gorm.io/gorm"
 )
 
 func Sync() {

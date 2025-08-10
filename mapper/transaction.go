@@ -5,6 +5,7 @@ import (
 	"test-payment-system/model"
 )
 
+// TransactionMapper is used to convert model.Transaction to respective dto's.
 type TransactionMapper struct{}
 
 func NewTransactionMapper() *TransactionMapper {

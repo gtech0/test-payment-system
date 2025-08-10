@@ -10,6 +10,8 @@ import (
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
+// NewRouter creates a pre-configured gin http router
+// with set routes
 func NewRouter() *gin.Engine {
 	router := gin.Default()
 
@@ -32,7 +34,7 @@ func NewRouter() *gin.Engine {
 		transactionRouter.GET("/transactions", transactionController.GetLast)
 	}
 
-	//http://localhost:8001/swagger/index.html
+	// http://localhost:8001/swagger/index.html
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	return router
