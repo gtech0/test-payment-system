@@ -10,8 +10,7 @@ import (
 	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
-// NewRouter creates a pre-configured gin http router
-// with set routes
+// NewRouter creates a pre-configured gin http router with set routes.
 func NewRouter() *gin.Engine {
 	router := gin.Default()
 

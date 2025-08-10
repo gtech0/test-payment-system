@@ -1,6 +1,6 @@
 package errs
 
-// CustomError is a custom struct for handling error messages
+// CustomError is a custom struct for handling error messages.
 type CustomError struct {
 	Text   string `json:"text"`
 	Status int    `json:"status"`

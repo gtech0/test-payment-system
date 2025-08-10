@@ -8,7 +8,7 @@ import (
 	"github.com/google/uuid"
 )
 
-// WalletRepository handles database operations related to model.Wallet
+// WalletRepository handles database operations related to model.Wallet.
 type WalletRepository struct{}
 
 func NewWalletRepository() *WalletRepository {

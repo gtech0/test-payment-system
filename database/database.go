@@ -13,7 +13,7 @@ import (
 
 var DB *gorm.DB
 
-// Connect connects to a database, using specified in .env credentials
+// Connect connects to a database, using specified in .env credentials.
 func Connect() {
 	var err error
 	dsn := ConvertToDSN()

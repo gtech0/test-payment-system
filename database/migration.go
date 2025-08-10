@@ -10,6 +10,8 @@ import (
 	"gorm.io/gorm"
 )
 
+// Sync handles model migration.
+// Additionally, it adds extensions and seed data.
 func Sync() {
 	if err := DB.Exec(`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`).Error; err != nil {
 		log.Fatalf("failed to enable uuid-ossp extension: %v", err)
